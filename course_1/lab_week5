@@ -1,0 +1,21 @@
+<html>
+<head><title>Welcome to my excellent blog</title></head>
+<body>
+# ссылка на картинку в хранилище
+<img src='https://storage.googleapis.com/qwiklabs-gcp-02-a6f52e595c1b/my-excellent-blog.png'>
+<h1>Welcome to my excellent blog</h1>
+<?php
+ $dbserver = "34.173.153.159";  # внешний ip базы
+$dbuser = "blogdbuser";         # логин базы
+$dbpassword = "Q1werty12";      # пароль базы
+// In a production blog, we would not store the MySQL
+// password in the document root. Instead, we would store it in a
+// configuration file elsewhere on the web server VM instance.
+$conn = new mysqli($dbserver, $dbuser, $dbpassword);
+if (mysqli_connect_error()) {
+        echo ("Database connection failed: " . mysqli_connect_error());
+} else {
+        echo ("Database connection succeeded.");
+}
+?>
+</body></html>
